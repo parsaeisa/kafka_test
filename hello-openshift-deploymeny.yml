@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-openshift
+  name: kafka-test
 spec:
   replicas: 1
   selector:
@@ -17,3 +17,8 @@ spec:
           image: openshift/hello-openshift:latest
           ports:
             - containerPort: 80
+
+        - name: kafka
+          image: bitnami/kafka
+          ports:
+            - containerPort: 90
